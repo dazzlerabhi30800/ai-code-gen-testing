@@ -3,15 +3,16 @@ import Prompt from "@/data/Prompt";
 // import axios from "axios";
 
 export default function Home() {
-  // const messages = { content: "make a new app", role: "user" };
+  const messages = { content: "make a new app", role: "user" };
 
   const handleSubmit = async () => {
-    // const aiPrompt = messages.content + " " + Prompt.CODE_GEN_PROMPT;
+    const aiPrompt = messages.content + " " + Prompt.CODE_GEN_PROMPT;
     // const fetch = await axios.post("api/ai-code", {
     //   prompt: aiPrompt,
     // });
     const prompt = {
-      prompt: "very well let's see if this works",
+      // prompt: "very well let's see if this works",
+      prompt: aiPrompt,
     };
     console.log(Prompt.CODE_GEN_PROMPT);
     const res = await fetch("api/ai-code", {
